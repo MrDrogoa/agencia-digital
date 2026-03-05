@@ -1,0 +1,8 @@
+/* Animaciones para el menú de navegación */
+.nav-item a {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item a:hover {
+  text-shadow: 0 4px 8px rgba(46, 90, 143, 0.3);
+}

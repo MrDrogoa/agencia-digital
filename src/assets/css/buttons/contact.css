@@ -1,0 +1,34 @@
+.btn-contact::before,
+.btn-contact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  transform: skew(15deg);
+  transition: all 0.5s;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.btn-contact::before {
+  left: -10px;
+  background: white;
+}
+
+.btn-contact::after {
+  right: -10px;
+  background: white;
+}
+
+/* Hover effect only on lg (1024px+) and xl screens */
+@media (min-width: 1024px) {
+  .btn-contact:hover::before,
+  .btn-contact:hover::after {
+    width: 58%;
+  }
+
+  .btn-contact:hover span {
+    color: #2e5a8f;
+  }
+}
