@@ -1,6 +1,7 @@
 <script setup>
 import HeroImg from "@/components/hero/HeroImg.vue";
 import HeroContent from "@/components/hero/HeroContent.vue";
+import VectorComponents from "@/components/VectorComponents.vue";
 </script>
 
 <template>
@@ -14,6 +15,7 @@ import HeroContent from "@/components/hero/HeroContent.vue";
       <div class="lg:w-1/2 flex justify-center">
         <hero-img />
       </div>
+      <vector-components class="hidden md:block" />
     </article>
   </section>
 </template>

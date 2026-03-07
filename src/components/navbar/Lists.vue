@@ -1,7 +1,15 @@
 <script setup>
 import { IconMenu4, IconX } from "@tabler/icons-vue";
 import ButtonContactComponents from "@/components/buttons/ButtonContactComponents.vue";
-import { ref } from "vue";
+import { ref, computed } from "vue";
+
+const props = defineProps({
+  variant: {
+    type: String,
+    default: "home", // 'home' or 'secondary'
+    validator: (value) => ["home", "secondary"].includes(value),
+  },
+});
 
 const menuOpen = ref(false);
 
@@ -15,6 +23,17 @@ const menuList = [
   { name: "Trabajos", path: "/works" },
   { name: "Exitos", path: "/success" },
 ];
+
+// Clases dinámicas según variant
+const textClasses = computed(() => {
+  return props.variant === "home" ? "text-white" : "text-[#1D4580]";
+});
+
+const hoverClasses = computed(() => {
+  return props.variant === "home"
+    ? "hover:bg-white hover:text-[#2E5A8F]"
+    : "hover:bg-[#1D4580] hover:text-white";
+});
 </script>
 
 <template>
@@ -23,11 +42,17 @@ const menuList = [
       <li
         v-for="item in menuList"
         :key="item.name"
-        class="nav-item md:text-sm lg:text-base xl:text-lg font-semibold text-white transition-all duration-300"
+        :class="[
+          'nav-item md:text-sm lg:text-base xl:text-lg font-semibold transition-all duration-300',
+          textClasses,
+        ]"
       >
         <router-link
           :to="item.path"
-          class="relative inline-block py-3 px-5 rounded-3xl transition-all duration-300 hover:bg-white hover:text-[#2E5A8F] hover:-translate-y-1 hover:shadow-lg"
+          :class="[
+            'relative inline-block py-3 px-5 rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg',
+            hoverClasses,
+          ]"
         >
           {{ item.name }}
         </router-link>
