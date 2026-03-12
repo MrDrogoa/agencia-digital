@@ -1,7 +1,9 @@
+<script setup>
+import AboutUsComponents from "@/components/AboutUsComponents.vue";
+</script>
+
 <template>
-  <div></div>
+  <about-us-components />
 </template>
 
-<script setup></script>
-
-<style lang="scss" scoped></style>
+<

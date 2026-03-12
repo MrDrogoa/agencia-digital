@@ -122,9 +122,133 @@ El sitio está optimizado para múltiples tamaños de pantalla:
 - **Tailwind**: Clases utility-first con soporte para clases dinámicas
 - **Props**: Validación de props con TypeScript-like patterns
 
+## 🎨 Componentes Personalizables con Clases Dinámicas
+
+### TextH1Components - Aceptar Clases desde Componentes Padres
+
+Se implementó la capacidad de pasar clases CSS personalizadas a componentes reutilizables usando `$attrs.class`.
+
+#### Implementación
+
+**Componente TextH1Components.vue**
+```vue
+<script setup></script>
+
+<template>
+  <h1
+    :class="[
+      'font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold',
+      $attrs.class
+    ]"
+  >
+    <slot></slot>
+  </h1>
+</template>
+```
+
+#### Uso desde Componentes Padres
+```vue
+<TextH1Components class="text-center mb-4 text-blue-500">
+  Mi Título Personalizado
+</TextH1Components>
+```
+
+#### Ventajas
+- ✅ **Fusión automática**: Las clases del padre se suman a las clases base
+- ✅ **No hay override**: Las clases base se mantienen, solo se agregan las nuevas
+- ✅ **Flexibilidad**: Cada uso del componente puede tener estilos únicos sin duplicar código
+- ✅ **Vue nativo**: Usa `$attrs` sin necesidad de props adicionales
+
+## 📐 Superposición de Contenido sobre Imágenes
+
+### HeroAbout - Posicionamiento Absoluto
+
+Se implementó la superposición del componente `AboutContent` sobre `AboutImg` usando posicionamiento CSS.
+
+#### Implementación
+
+**Componente HeroAbout.vue**
+```vue
+<script setup>
+import AboutContent from "@/components/hero/aboutus/AboutContent.vue";
+import AboutImg from "@/components/hero/aboutus/Aboutimg.vue";
+</script>
+
+<template>
+  <div class="mt-8 md:mt-16 relative">
+    <about-img />
+    <about-content 
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+             bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-xl 
+             max-w-2xl text-center"
+    />
+  </div>
+</template>
+```
+
+#### Técnicas de Posicionamiento
+
+**Opción 1 - Centrado Perfecto (Recomendado)**
+```vue
+<about-content 
+  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center"
+/>
+```
+
+**Opción 2 - Cubriendo Toda la Imagen**
+```vue
+<about-content 
+  class="absolute inset-0 flex items-center justify-center p-8"
+/>
+```
+
+**Opción 3 - Esquina Superior**
+```vue
+<about-content 
+  class="absolute top-8 left-8 md:top-16 md:left-16"
+/>
+```
+
+**Opción 4 - Parte Inferior**
+```vue
+<about-content 
+  class="absolute bottom-8 left-8 right-8 md:bottom-16"
+/>
+```
+
+#### Mejoras de Legibilidad
+
+**Fondo Semi-transparente**
+```vue
+<about-content 
+  class="absolute inset-0 bg-black/50 rounded-3xl"
+/>
+```
+
+**Capa de Oscurecimiento**
+```vue
+<div class="mt-8 md:mt-16 relative">
+  <!-- Capa oscura -->
+  <div class="absolute inset-0 bg-black/40 rounded-3xl z-10"></div>
+  
+  <about-img />
+  
+  <about-content 
+    class="absolute inset-0 flex items-center justify-center z-20 text-white"
+  />
+</div>
+```
+
+#### Claves del Posicionamiento
+
+- 🔑 **Contenedor `relative`**: El div padre debe tener `position: relative`
+- 🔑 **Hijo `absolute`**: El contenido superpuesto usa `position: absolute`
+- 🔑 **Z-index**: Usa `z-10`, `z-20`, etc. para controlar el orden de apilamiento
+- 🔑 **Responsive**: Ajusta padding y posiciones con breakpoints de Tailwind (`md:`, `lg:`)
+
 ## 📅 Última Actualización
 
-7 de marzo de 2026
+11 de marzo de 2026
 
 ---
 
