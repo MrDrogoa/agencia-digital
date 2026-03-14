@@ -246,9 +246,31 @@ import AboutImg from "@/components/hero/aboutus/Aboutimg.vue";
 - 🔑 **Z-index**: Usa `z-10`, `z-20`, etc. para controlar el orden de apilamiento
 - 🔑 **Responsive**: Ajusta padding y posiciones con breakpoints de Tailwind (`md:`, `lg:`)
 
+## 🆕 Cambios Realizados Hoy (14 de marzo de 2026)
+
+### Sección visual adicional en About Us
+
+Se agregó una nueva franja visual reutilizable para la vista About Us con ícono y texto central.
+
+#### Implementación técnica
+
+- Se creó el componente `FillLine.vue` en `src/components/main/aboutusmain/FillLine.vue`
+- Se importó `IconPhone` desde `@tabler/icons-vue`
+- Se diseñó una sección responsive con:
+  - Fondo azul `#1D4580`
+  - Ícono de teléfono en color blanco
+  - Título principal en tipografía `font-primary`
+  - Escalado por breakpoints (`sm`, `md`, `lg`, `xl`)
+- Se integró `FillLine` en `AboutUsComponents.vue` para renderizarlo debajo de `HeroAbout`
+
+#### Archivos actualizados hoy
+
+- `src/components/main/aboutusmain/FillLine.vue` (nuevo)
+- `src/components/AboutUsComponents.vue` (importación y render del nuevo componente)
+
 ## 📅 Última Actualización
 
-11 de marzo de 2026
+14 de marzo de 2026
 
 ---
 
