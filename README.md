@@ -268,9 +268,49 @@ Se agregó una nueva franja visual reutilizable para la vista About Us con ícon
 - `src/components/main/aboutusmain/FillLine.vue` (nuevo)
 - `src/components/AboutUsComponents.vue` (importación y render del nuevo componente)
 
+## 🆕 Cambios Realizados Hoy (18 de marzo de 2026)
+
+### Sección de tarjetas en About Us
+
+Se implementó una nueva sección visual de 3 tarjetas en la vista About Us, alineada con el diseño de referencia.
+
+#### Implementación técnica
+
+- Se creó el componente `CardsAboutUs.vue` con 3 tarjetas dinámicas renderizadas con `v-for`
+- Se configuró un layout responsive:
+  - Mobile: 1 tarjeta por fila (`w-full`)
+  - Desktop: distribución en fila con Flex
+- Se agregaron títulos personalizados por tarjeta:
+  - Medio Ambiente
+  - Diversidad Inclusión
+  - Calidad
+- Se aplicó superposición oscura (`bg-black/45`) para mejorar legibilidad del texto
+- Se centró el texto sobre la imagen con posicionamiento absoluto y `z-index`
+- Se usó `white-space: pre-line` para respetar saltos de línea en títulos de dos líneas
+
+### Corrección de error en tiempo de ejecución
+
+Se corrigió el error `ReferenceError: ref is not defined` en `CardsAboutUs.vue`.
+
+#### Causa
+
+- Se estaba usando `ref(...)` sin importar `ref` desde Vue en `<script setup>`
+
+#### Solución aplicada
+
+- Se agregó `import { ref } from "vue";` en el componente para habilitar la reactividad declarada
+
+#### Archivos actualizados hoy
+
+- `src/components/main/aboutusmain/CardsAboutUs.vue` (nuevo componente y corrección de runtime)
+- `src/components/AboutUsComponents.vue` (integración de la sección de tarjetas)
+- `src/views/AboutUsView.vue` (estructura de la vista con componentes de About Us)
+- `src/assets/card/cardaboutus/` (imágenes de tarjetas)
+- `README.md` (documentación de cambios del día)
+
 ## 📅 Última Actualización
 
-14 de marzo de 2026
+18 de marzo de 2026
 
 ---
 

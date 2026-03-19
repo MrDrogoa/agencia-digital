@@ -1,11 +1,13 @@
 <script setup>
-import HeroAbout from "@/components/hero/aboutus/HeroAbout.vue";
-import FillLine from "@/components/main/aboutusmain/FillLine.vue";
+import CardsAboutUs from "@/components/main/aboutusmain/CardsAboutUs.vue";
+import TextH2Components from "@/components/font/TextH2Components.vue";
 </script>
 
 <template>
-  <section class="max-w-325 mx-auto px-4 xl:px-0">
-    <hero-about />
+  <section
+    class="max-w-325 mx-auto pt-8 md:pt-20 lg:pt-25 xl:pt-30 px-4 xl:px-0"
+  >
+    <text-h2-components class="text-center">Titulo</text-h2-components>
+    <cards-about-us />
   </section>
-  <fill-line />
 </template>
