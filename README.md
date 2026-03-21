@@ -308,9 +308,35 @@ Se corrigió el error `ReferenceError: ref is not defined` en `CardsAboutUs.vue`
 - `src/assets/card/cardaboutus/` (imágenes de tarjetas)
 - `README.md` (documentación de cambios del día)
 
+## 🆕 Cambios Realizados Hoy (21 de marzo de 2026)
+
+### Nuevo bloque descriptivo en About Us
+
+Se agregó una sección de texto informativo dentro del flujo de About Us para reforzar el contexto de la página.
+
+#### Implementación técnica
+
+- Se creó el componente `TextAboutUs.vue` en `src/components/main/aboutusmain/TextAboutUs.vue`
+- Se implementó estructura con:
+  - Título principal (`h2`) centrado con tipografía `font-primary`
+  - Párrafo reutilizable mediante `ParagraphComponents`
+  - Espaciados y escalado responsive por breakpoints (`md`, `lg`, `xl`)
+- Se integró `TextAboutUs` en `AboutUsComponents.vue` para renderizarlo debajo de la sección de tarjetas
+
+### Archivos base creados para próximas secciones
+
+Se dejaron creados archivos iniciales (placeholders) para continuar el desarrollo de nuevas secciones.
+
+#### Archivos actualizados hoy
+
+- `src/components/main/aboutusmain/TextAboutUs.vue` (nuevo componente de contenido)
+- `src/components/AboutUsComponents.vue` (importación y render de `TextAboutUs`)
+- `src/components/WorksComponents.vue` (archivo base creado)
+- `src/components/hero/job/JobHero.vue` (archivo base creado)
+
 ## 📅 Última Actualización
 
-18 de marzo de 2026
+21 de marzo de 2026
 
 ---
 
