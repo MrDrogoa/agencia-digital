@@ -334,9 +334,33 @@ Se dejaron creados archivos iniciales (placeholders) para continuar el desarroll
 - `src/components/WorksComponents.vue` (archivo base creado)
 - `src/components/hero/job/JobHero.vue` (archivo base creado)
 
+## 🆕 Cambios Realizados Hoy (29 de marzo de 2026)
+
+### Primera estructura de la vista Works
+
+Se implementó la base de la página Works conectando la vista principal con un nuevo bloque hero reutilizable para esta sección.
+
+#### Implementación técnica
+
+- Se actualizó `WorksView.vue` para renderizar `WorksComponents`
+- Se construyó `WorksComponents.vue` con un contenedor central (`max-w-325`) y padding responsive
+- Se creó `JobHero.vue` como wrapper visual de la sección hero de Works
+- Se aplicó superposición de contenido sobre imagen en `JobHero.vue` con `position: absolute` para ubicar texto en la parte inferior izquierda
+- Se crearon `JobContent.vue` y `JobImg.vue` para separar responsabilidades entre contenido textual e imagen de fondo
+- Se incorporó un asset SVG dedicado para esta sección (`VectorHeroJob.svg`)
+
+#### Archivos actualizados hoy
+
+- `src/views/WorksView.vue` (integración de `WorksComponents`)
+- `src/components/WorksComponents.vue` (estructura principal de la sección Works)
+- `src/components/hero/job/JobHero.vue` (composición de imagen + contenido superpuesto)
+- `src/components/hero/job/JobContent.vue` (texto y layout interno del hero)
+- `src/components/hero/job/JobImg.vue` (render de imagen principal)
+- `src/assets/VectorHeroJob.svg` (nuevo recurso visual)
+
 ## 📅 Última Actualización
 
-21 de marzo de 2026
+29 de marzo de 2026
 
 ---
 

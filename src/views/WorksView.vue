@@ -1,7 +1,7 @@
+<script setup>
+import WorksComponents from "@/components/WorksComponents.vue";
+</script>
+
 <template>
-  <div></div>
+  <works-components />
 </template>
-
-<script setup></script>
-
-<style lang="scss" scoped></style>
