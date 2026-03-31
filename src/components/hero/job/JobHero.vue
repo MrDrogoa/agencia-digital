@@ -6,8 +6,8 @@ import jobImg from "@/components/hero/job/JobImg.vue";
 <template>
   <div class="mt-8 md:mt-16 relative">
     <job-img />
-    <job-content
-      class="absolute bottom-4 lg:bottom-8 xl:bottom-10 left-4 lg:left-8 xl:left-10"
-    />
+    <div class="absolute inset-0 flex items-center">
+      <job-content class="w-full" />
+    </div>
   </div>
 </template>

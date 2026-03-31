@@ -358,9 +358,30 @@ Se implementó la base de la página Works conectando la vista principal con un 
 - `src/components/hero/job/JobImg.vue` (render de imagen principal)
 - `src/assets/VectorHeroJob.svg` (nuevo recurso visual)
 
+## 🆕 Cambios Realizados Hoy (30 de marzo de 2026)
+
+### Mejoras de composición y responsive en Hero de Works
+
+Se refinó la composición del hero de la sección Works para lograr mejor alineación del contenido, más consistencia visual y comportamiento responsive en mobile y desktop.
+
+#### Implementación técnica
+
+- En `JobHero.vue` se cambió el posicionamiento de `JobContent` a una capa centrada verticalmente (`absolute inset-0 flex items-center`) para una superposición más estable sobre la imagen
+- En `JobContent.vue` se agregó `ButtonAllComponents` para incluir una acción visible dentro del bloque principal
+- Se extrajo el texto descriptivo a la constante `contentParagraph` para mejorar legibilidad y mantenimiento del componente
+- Se reestructuró el layout interno con Flex responsive (`flex-col` en mobile y `sm:flex-row` en pantallas mayores)
+- Se ajustaron anchos, alineaciones y espaciados del título y párrafo para mejor distribución en distintos breakpoints
+- En `JobImg.vue` se definió altura mínima en mobile (`h-70 sm:h-auto`) para mantener presencia visual de la imagen
+
+#### Archivos actualizados hoy
+
+- `src/components/hero/job/JobHero.vue` (nuevo contenedor de superposición centrada)
+- `src/components/hero/job/JobContent.vue` (botón, texto extraído a constante y layout responsive)
+- `src/components/hero/job/JobImg.vue` (ajuste de altura responsive)
+
 ## 📅 Última Actualización
 
-29 de marzo de 2026
+30 de marzo de 2026
 
 ---
 

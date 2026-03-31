@@ -6,6 +6,6 @@ import JobHero from "@/assets/vectorherojob.svg";
   <img
     :src="JobHero"
     alt="About Us Image"
-    class="w-full h-auto object-cover rounded-3xl"
+    class="w-full h-70 sm:h-auto object-cover rounded-3xl"
   />
 </template>
