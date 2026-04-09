@@ -379,9 +379,58 @@ Se refinó la composición del hero de la sección Works para lograr mejor aline
 - `src/components/hero/job/JobContent.vue` (botón, texto extraído a constante y layout responsive)
 - `src/components/hero/job/JobImg.vue` (ajuste de altura responsive)
 
+## 🆕 Cambios Realizados (4 de abril de 2026)
+
+### Estructura inicial de sección de tarjetas para Works
+
+Se agregó una primera versión modular para la sección de cards de la vista Works, separando responsabilidades por bloques reutilizables.
+
+#### Implementación técnica
+
+- Se creó `CardsJobs.vue` como sección contenedora con título (`TextH2Components`) y render de `CardsJobIcons`
+- Se creó `CardsJobIcons.vue` con tarjetas dinámicas renderizadas con `v-for`
+- Se dejó preparado un campo de ícono por tarjeta para reemplazar el placeholder visual con íconos de librería
+- Se aplicó layout responsive con Flex:
+  - Mobile: 1 tarjeta por fila
+  - Tablet: 2 tarjetas por fila
+  - Desktop: 3 tarjetas por fila
+- Se creó `CardsJobDoble.vue` como segunda sección contenedora para variantes de tarjetas con botón
+
+#### Archivos actualizados ese día
+
+- `src/components/main/Jobmain/CardsJobs.vue` (nuevo componente contenedor)
+- `src/components/main/Jobmain/CardsJobIcons.vue` (nuevo listado dinámico de cards)
+- `src/components/main/Jobmain/CardsJobDoble.vue` (nuevo componente contenedor)
+
+## 🆕 Cambios Realizados Hoy (9 de abril de 2026)
+
+### Integración y refinamiento de cards en Works
+
+Se integraron nuevas secciones en el flujo principal de Works y se refinó una variante de tarjetas para que el contenido sea dinámico, responsive y alineado al diseño visual definido.
+
+#### Implementación técnica
+
+- En `WorksComponents.vue` se integraron `CardsJobs` y `CardsJobDoble` debajo del hero para ampliar el contenido de la vista
+- En `CardsJobContent.vue` se implementó data local dinámica de 4 tarjetas (`id`, `title`, `description`, `buttonText`, `iconText`)
+- Se mantuvo el `div` del ícono y el componente de botón existentes, reposicionándolos para ajustarlos a la composición visual
+- Se aplicó layout con Flexbox y breakpoints responsive:
+  - Mobile: 1 tarjeta por fila
+  - Tablet: 2 tarjetas por fila
+  - Desktop: 2+ tarjetas según ancho disponible
+- Se definieron colores de diseño para consistencia visual:
+  - Borde y título: `#2E5A8F`
+  - Texto de párrafo: `#5C6F91`
+- Se añadieron comentarios breves en el componente para mejorar mantenibilidad y lectura del código
+
+#### Archivos actualizados hoy
+
+- `src/components/WorksComponents.vue` (integración de nuevas secciones de cards)
+- `src/components/main/Jobmain/CardsJobContent.vue` (cards dinámicas con botón e ícono)
+- `src/components/main/Jobmain/CardsJobDoble.vue` (render de `CardsJobContent`)
+
 ## 📅 Última Actualización
 
-30 de marzo de 2026
+9 de abril de 2026
 
 ---
 
