@@ -2,6 +2,7 @@
 import JobHero from "@/components/hero/job/JobHero.vue";
 import CardsJobs from "@/components/main/Jobmain/CardsJobs.vue";
 import CardsJobDoble from "@/components/main/Jobmain/CardsJobDoble.vue";
+import JobCarrusel from "@/components/main/Jobmain/JobCarrusel.vue";
 </script>
 
 <template>
@@ -9,5 +10,6 @@ import CardsJobDoble from "@/components/main/Jobmain/CardsJobDoble.vue";
     <job-hero />
     <cards-jobs />
     <cards-job-doble />
+    <job-carrusel />
   </section>
 </template>

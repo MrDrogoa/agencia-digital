@@ -428,9 +428,32 @@ Se integraron nuevas secciones en el flujo principal de Works y se refinó una v
 - `src/components/main/Jobmain/CardsJobContent.vue` (cards dinámicas con botón e ícono)
 - `src/components/main/Jobmain/CardsJobDoble.vue` (render de `CardsJobContent`)
 
+## 🆕 Cambios Realizados Hoy (13 de abril de 2026)
+
+### Nueva sección de carrusel en Works
+
+Se implementó e integró un nuevo carrusel visual en la página Works, con navegación por flechas, autoplay y estructura dinámica basada en datos locales.
+
+#### Implementación técnica
+
+- Se creó `JobCarrusel.vue` como contenedor de sección para título + contenido del carrusel
+- Se creó `JobCarruselContent.vue` con lógica dinámica usando `ref`, `onMounted` y `onUnmounted`
+- Se configuró un arreglo reactivo de 3 slides reutilizando temporalmente la misma imagen `image-1.webp`
+- Se implementó autoplay cada 5 segundos con reinicio automático tras interacción manual
+- Se añadieron controles de navegación anterior/siguiente con `@tabler/icons-vue`
+- Se aplicó layout responsive con Tailwind y Flexbox para imagen central + botones inferiores
+- Se reemplazó la transición CSS local por clases utilitarias Tailwind en el componente `transition`, eliminando estilos scoped del archivo
+- Se integró la nueva sección en `WorksComponents.vue` para renderizar el carrusel dentro del flujo principal de Works
+
+#### Archivos actualizados hoy
+
+- `src/components/WorksComponents.vue` (importación y render de `JobCarrusel`)
+- `src/components/main/Jobmain/JobCarrusel.vue` (nuevo componente contenedor de sección)
+- `src/components/main/Jobmain/JobCarruselContent.vue` (nuevo carrusel dinámico con autoplay y controles)
+
 ## 📅 Última Actualización
 
-9 de abril de 2026
+13 de abril de 2026
 
 ---
 
