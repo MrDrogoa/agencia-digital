@@ -1,7 +1,7 @@
+<script setup>
+import SuccessComponents from "@/components/SuccessComponents.vue";
+</script>
+
 <template>
-  <div></div>
+  <success-components />
 </template>
-
-<script setup></script>
-
-<style lang="scss" scoped></style>

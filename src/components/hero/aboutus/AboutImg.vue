@@ -6,6 +6,6 @@ import AboutHero from "@/assets/aboutus.webp";
   <img
     :src="AboutHero"
     alt="About Us Image"
-    class="w-full h-auto object-cover rounded-3xl"
+    class="w-full h-70 sm:h-auto object-cover rounded-3xl"
   />
 </template>
