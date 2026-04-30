@@ -1,7 +1,7 @@
+<script setup>
+import ContactComponents from "@/components/ContactComponents.vue";
+</script>
+
 <template>
-  <div></div>
+  <contact-components />
 </template>
-
-<script setup></script>
-
-<style lang="scss" scoped></style>

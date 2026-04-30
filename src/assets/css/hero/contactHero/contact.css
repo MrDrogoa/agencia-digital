@@ -1,0 +1,15 @@
+@keyframes loading {
+  0% {
+    transform: translateX(-140%);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(260%);
+    opacity: 0;
+  }
+}

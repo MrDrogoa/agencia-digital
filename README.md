@@ -537,9 +537,31 @@ Se ajusto la seccion de comentarios para que el contenido se distribuya en una g
 - `src/components/main/succesmain/CardContentSuccess.vue` (tarjetas dinamicas con boton e imagen)
 - `src/components/main/succesmain/CommentsContentSuccess.vue` (grilla responsive de comentarios)
 
+## 🆕 Cambios Realizados Hoy (29 de abril de 2026)
+
+### Sección Contact con líneas animadas
+
+Se ajustó la cabecera de la vista Contact para mostrar dos líneas laterales con gradientes y un efecto de carga infinito al hacer hover sobre el bloque.
+
+#### Implementación técnica
+
+- Se actualizó `ContactContent.vue` para estructurar el título y las líneas laterales con Flexbox
+- Se aplicaron gradientes opuestos en cada línea para mantener la composición visual del diseño
+- Se hizo que las líneas permanezcan visibles todo el tiempo y que el hover active un brillo en movimiento continuo
+- Se definió la animación `loading` con `@keyframes` para simular un efecto de carga infinito
+- Se mantuvo el comportamiento responsive con anchos adaptativos por breakpoint (`sm`, `md`, `lg`)
+- Se corrigió la forma de importar `contact.css`, moviéndolo a `<script setup>` para que Vue lo procese correctamente
+
+#### Archivos actualizados hoy
+
+- `src/components/hero/contact/ContactContent.vue` (estructura visual y animación hover)
+- `src/assets/css/hero/contactHero/contact.css` (keyframes de la animación de carga)
+- `src/views/ContactView.vue` (integración de la vista Contact)
+- `src/components/ContactComponents.vue` (composición principal de la sección Contact)
+
 ## 📅 Última Actualización
 
-23 de abril de 2026
+29 de abril de 2026
 
 ---
 
