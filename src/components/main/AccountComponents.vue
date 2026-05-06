@@ -3,10 +3,10 @@ import { ref, onMounted, onUnmounted } from "vue";
 import ParagraphComponents from "@/components/font/ParagraphComponents.vue";
 
 const stats = [
-  { value: 30, prefix: "+", label: "Lorem ipsum" },
-  { value: 150, prefix: "+", label: "Lorem ipsum" },
-  { value: 100, prefix: "+", label: "Lorem ipsum" },
-  { value: 10, prefix: "+", label: "Lorem ipsum" },
+  { value: 30, prefix: "+", label: "Casos de Éxito" },
+  { value: 150, prefix: "+", label: "Componentes de Diseño" },
+  { value: 100, prefix: "+", label: "Usabilidad Aprobadas" },
+  { value: 10, prefix: "+", label: "Soluciones con IA" },
 ];
 
 const animatedValues = ref(stats.map(() => 0));
@@ -81,26 +81,38 @@ onUnmounted(() => {
 
 <template>
   <section ref="sectionRef" class="pt-6 sm:pt-10 md:pt-12 lg:pt-14 xl:pt-16">
-    <article class="flex flex-wrap justify-center items-center">
+    <!-- Mobile & Tablet: 2 columnas -->
+    <article class="grid grid-cols-2 gap-4 md:gap-6 lg:hidden px-4">
       <template v-for="(stat, index) in stats" :key="index">
-        <!-- Contenedor del número y texto -->
-        <div
-          class="flex flex-col items-center justify-center px-6 md:px-8 lg:px-12 py-4 w-1/2 lg:w-1/5"
-        >
+        <div class="flex flex-col items-center justify-center py-4">
           <h3
-            class="font-primary text-4xl md:text-5xl lg:text-6xl font-bold text-[#2B5B8A] mb-2"
+            class="font-primary text-3xl md:text-4xl font-bold text-[#2B5B8A] mb-2"
           >
             {{ stat.prefix }}{{ animatedValues[index] }}
           </h3>
-          <paragraph-components>
+          <paragraph-components class="text-center text-sm md:text-base">
+            {{ stat.label }}
+          </paragraph-components>
+        </div>
+      </template>
+    </article>
+
+    <!-- Desktop: 4 columnas con líneas divisorias -->
+    <article class="hidden lg:flex justify-center items-center">
+      <template v-for="(stat, index) in stats" :key="index">
+        <div class="flex flex-col items-center justify-center px-8 py-4 flex-1">
+          <h3 class="font-primary text-6xl font-bold text-[#2B5B8A] mb-2">
+            {{ stat.prefix }}{{ animatedValues[index] }}
+          </h3>
+          <paragraph-components class="text-center">
             {{ stat.label }}
           </paragraph-components>
         </div>
 
-        <!-- Línea divisoria solo para desktop (4 columnas) -->
+        <!-- Línea divisoria entre elementos -->
         <div
           v-if="index < stats.length - 1"
-          class="h-24 w-0.5 bg-[#9FE7F5] hidden lg:block"
+          class="h-24 w-0.5 bg-[#9FE7F5]"
         ></div>
       </template>
     </article>

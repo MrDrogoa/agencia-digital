@@ -595,9 +595,39 @@ Se integraron ambos bloques (`ContactData` y `ContactForm`) en la composición p
 - `src/components/main/contactmain/ContactData.vue` (nuevo bloque de datos con gradiente e iconos)
 - `src/components/main/contactmain/ContactForm.vue` (nuevo formulario funcional con validación y envío a WhatsApp)
 
+## 🆕 Cambios Realizados Hoy (6 de mayo de 2026)
+
+### Rediseño responsive de la sección de estadísticas en AccountComponents
+
+Se refactorizó la sección de estadísticas para mejorar la simetría y alineación de columnas en todos los dispositivos, eliminando desigualdades visuales en responsive.
+
+#### Implementación técnica
+
+- Se separó el layout en dos versiones distintas usando condiciones con `hidden lg:block` y `lg:hidden`
+- **Mobile & Tablet**: Se implementó una grilla de 2 columnas iguales usando `grid grid-cols-2` para mayor uniformidad
+  - Ancho dinámico con `gap-4 md:gap-6` para espaciado responsive
+  - Tamaño de texto optimizado: números `text-3xl md:text-4xl` y labels `text-sm md:text-base`
+- **Desktop**: Se optimizó la versión desktop con `flex` y `flex-1` para garantizar columnas de ancho igual
+  - Números mantienen tamaño `text-6xl` para impacto visual
+  - Se eliminó el padding variable (`px-6 md:px-8 lg:px-12`) por un padding uniforme (`px-8`)
+  - Las líneas divisorias se mantienen solo en desktop donde tienen sentido visual
+- Se reemplazó el ancho porcentual (`w-1/2 lg:w-1/5`) por distribución flexible, eliminando desalineaciones
+- Se mantuvieron todas las animaciones de contadores y el `IntersectionObserver` sin cambios
+
+#### Ventajas visuales
+
+- ✅ Columnas perfectamente simétricas en mobile, tablet y desktop
+- ✅ Mejor balance entre números y texto
+- ✅ Sin desigualdades de ancho entre elementos
+- ✅ Responsive consistente en todos los breakpoints
+
+#### Archivos actualizados hoy
+
+- `src/components/main/AccountComponents.vue` (rediseño de layout y espaciados)
+
 ## 📅 Última Actualización
 
-30 de abril de 2026
+6 de mayo de 2026
 
 ---
 

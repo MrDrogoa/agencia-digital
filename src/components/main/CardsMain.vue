@@ -3,35 +3,40 @@ import { ref } from "vue";
 import Card1 from "@/assets/card/card-1.webp";
 import Card2 from "@/assets/card/card-2.webp";
 import Card3 from "@/assets/card/card-3.webp";
-import { IconArrowNarrowRightDashed } from "@tabler/icons-vue";
+import {
+  IconArrowNarrowRightDashed,
+  IconUsersGroup,
+  IconSourceCode,
+  IconAutomaticGearboxFilled,
+} from "@tabler/icons-vue";
 
 const cards = ref([
   {
     id: 1,
     image: Card1,
-    icon: "", // Aquí pondrás la ruta de tu icono
-    title: "Titulo",
+    icon: IconUsersGroup,
+    title: "Trabajo en Equipo",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis lorem non felis dignissim vestibulum at et lorem.",
-    linkText: "Lorem ipsum",
+      "Creemos que las mejores soluciones nacen de la inteligencia colectiva. Nos integramos en flujos de trabajo dinámicos, aportando una comunicación fluida y una coordinación técnica que garantiza la coherencia en cada etapa del proyecto.",
+    linkText: "Ver más",
   },
   {
     id: 2,
     image: Card2,
-    icon: "", // Aquí pondrás la ruta de tu icono
-    title: "Titulo",
+    icon: IconSourceCode,
+    title: "Desarrollo Web",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis lorem non felis dignissim vestibulum at et lorem.",
-    linkText: "Lorem ipsum",
+      "Construimos experiencias digitales escalables y de alto rendimiento. Nos especializamos en el uso de tecnologías modernas para entregar interfaces fluidas, asegurando que cada línea de código contribuya a una navegación intuitiva y optimizada para cualquier dispositivo.",
+    linkText: "Ver más",
   },
   {
     id: 3,
     image: Card3,
-    icon: "", // Aquí pondrás la ruta de tu icono
-    title: "Titulo",
+    icon: IconAutomaticGearboxFilled,
+    title: "Optimización Inteligente",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis lorem non felis dignissim vestibulum at et lorem.",
-    linkText: "Lorem ipsum",
+      "Implementamos herramientas de Inteligencia Artificial para optimizar procesos complejos y elevar la eficiencia operativa. Nos enfocamos en diseñar sistemas inteligentes y flujos automatizados que permitan a nuestros clientes escalar mediante el uso de tecnología de última generación.",
+    linkText: "Ver más",
   },
 ]);
 </script>
@@ -55,9 +60,9 @@ const cards = ref([
         <!-- Icono -->
 
         <div
-          class="w-16 h-16 bg-[#2E5A8F] rounded-full flex items-center justify-center absolute top-40 left-8 shadow-lg"
+          class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-[#2E5A8F] rounded-full flex items-center justify-center absolute top-40 left-8 shadow-lg"
         >
-          <span class="text-white text-sm">icon</span>
+          <component :is="card.icon" class="text-white text-sm" />
         </div>
         <!-- Contenido de la tarjeta -->
         <div class="py-6 lg:py-8 px-8 flex flex-col grow mt-4 lg:mt-5">
