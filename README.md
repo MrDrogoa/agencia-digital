@@ -625,9 +625,31 @@ Se refactorizó la sección de estadísticas para mejorar la simetría y alineac
 
 - `src/components/main/AccountComponents.vue` (rediseño de layout y espaciados)
 
+## 🆕 Cambios Realizados Hoy (7 de mayo de 2026)
+
+### Actualización de contenido y assets del carrusel principal
+
+Se renovó el carrusel principal para mostrar contenido real por slide, con nuevas imágenes, textos orientados a negocio y una llamada a la acción integrada.
+
+#### Implementación técnica
+
+- En `CarruselMain.vue` se reemplazó el import único de imagen por 3 assets dedicados (`software.webp`, `draw.webp`, `business.webp`)
+- Se actualizaron los slides dinámicos con nuevos títulos y descripciones orientadas a servicios
+- Se añadió la propiedad `link` en cada slide para soportar navegación contextual
+- Se integró `ButtonAllComponents` dentro del contenido textual de cada slide como CTA visible
+- Se ajustaron espaciados (`gap`) y estilos de la imagen para mejorar el balance visual en mobile y desktop
+- Se mantuvo la lógica existente de autoplay, transición y navegación con flechas
+
+#### Archivos actualizados hoy
+
+- `src/components/main/CarruselMain.vue` (nuevos textos, links y CTA por slide)
+- `src/assets/carrusel/software.webp` (nuevo recurso visual)
+- `src/assets/carrusel/draw.webp` (nuevo recurso visual)
+- `src/assets/carrusel/business.webp` (nuevo recurso visual)
+
 ## 📅 Última Actualización
 
-6 de mayo de 2026
+7 de mayo de 2026
 
 ---
 

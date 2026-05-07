@@ -1,7 +1,10 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 import VectorCarrusel from "@/assets/carrusel/VectorCarrusel.svg";
-import image1 from "@/assets/carrusel/image-1.webp";
+import software from "@/assets/carrusel/software.webp";
+import business from "@/assets/carrusel/business.webp";
+import draw from "@/assets/carrusel/draw.webp";
+import ButtonAllComponents from "@/components/buttons/ButtonAllComponents.vue";
 import {
   IconArrowBigRightFilled,
   IconArrowBigLeftFilled,
@@ -11,24 +14,28 @@ import {
 const slides = ref([
   {
     id: 1,
-    image: image1,
-    title: "Título 1",
+    image: software,
+    title: "Te guiamos en el camino de la innovación",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id quam pretium, fringilla augue ut, viverra libero. Donec bibendum augue non odio malesuada dignissim. Nam posuere blandit justo, ut luctus purus imperdiet quis. Curabitur tristique varius orci sit amet dictum.",
+      "Transformamos líneas de código en soluciones estratégicas. Nuestro enfoque combina robustez técnica con un diseño centrado en el usuario para impulsar la competitividad de tu negocio.",
+    link: "/servicios/desarrollo-software",
   },
   {
     id: 2,
-    image: image1,
-    title: "Título 2",
+    image: draw,
+    title: "Diseño que impacta, Estrategia que convierte",
     description:
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+      "No solo creamos flyers; diseñamos identidades visuales que cuentan historias. Potenciamos tu presencia online con estética estratégica para destacar desde el primer clic.",
+    link: "/servicios/diseño",
   },
   {
     id: 3,
-    image: image1,
-    title: "Título 3",
+    image: business,
+    title: "Garantizamos el éxito de tu visión digital",
     description:
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Trabajar con nosotros es iniciar una alianza de crecimiento. Nos comprometemos con la accesibilidad, la transparencia y resultados tangibles que construyen confianza a largo plazo.",
+
+    link: "/servicios/marketing-digital",
   },
 ]);
 
@@ -100,14 +107,14 @@ onUnmounted(() => {
           <transition name="fade" mode="out-in">
             <div
               :key="slides[currentIndex].id"
-              class="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 w-full"
+              class="flex flex-col lg:flex-row items-center gap-3 md:gap-4 lg:gap-5 w-full"
             >
               <!-- Imagen -->
               <div class="w-full lg:w-1/2 shrink-0">
                 <img
                   :src="slides[currentIndex].image"
                   :alt="slides[currentIndex].title"
-                  class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-lg"
+                  class="w-full md:w-100 lg:w-130 m-auto object-cover rounded-2xl shadow-xl"
                 />
               </div>
 
@@ -115,6 +122,12 @@ onUnmounted(() => {
               <div
                 class="w-full lg:w-1/2 text-center lg:text-left px-4 lg:px-0"
               >
+                <button-all-components
+                  :link="slides[currentIndex].link"
+                  class="mb-2 md:mb-4"
+                >
+                  Get Started
+                </button-all-components>
                 <h2
                   class="text-3xl lg:text-4xl font-bold text-[#2E5A8F] lg:text-white mb-4 lg:mb-6"
                 >
