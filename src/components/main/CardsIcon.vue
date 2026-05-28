@@ -1,5 +1,14 @@
 <script setup>
-import { IconCloudDown } from "@tabler/icons-vue";
+import {
+  IconCodeCircle2Filled,
+  IconShoppingCartFilled,
+  IconPaintFilled,
+  IconSettingsFilled,
+  IconSortAscending2Filled,
+  IconArrowAutofitUpFilled,
+  IconDiamondFilled,
+  IconShieldCheckFilled,
+} from "@tabler/icons-vue";
 
 // Props para recibir los datos de las cards
 const props = defineProps({
@@ -8,51 +17,59 @@ const props = defineProps({
     default: () => [
       {
         id: 1,
-        icon: IconCloudDown,
-        title: "Titulo",
-        description: "Lorem ipsum dolor sit amet.",
+        icon: IconCodeCircle2Filled,
+        title: "Desarrollo Web a Medida",
+        description:
+          "Medida	Creamos sitios rápidos y escalables con React, Vue.js y Node.js adaptados a tus necesidades técnicas.",
       },
       {
         id: 2,
-        icon: IconCloudDown,
-        title: "Titulo",
-        description: "Lorem ipsum dolor sit amet.",
+        icon: IconShoppingCartFilled,
+        title: "E-commerce y Ventas",
+        description:
+          "Implementamos tiendas online con pasarelas de pago seguras para que vendas tus productos 24/7.",
       },
       {
         id: 3,
-        icon: IconCloudDown,
-        title: "Titulo",
-        description: "Lorem ipsum dolor sit amet.",
+        icon: IconPaintFilled,
+        title: "Diseño UX/UI Profesional",
+        description:
+          "Prototipamos interfaces intuitivas en Figma que garantizan una experiencia de usuario fluida y moderna.",
       },
       {
         id: 4,
-        icon: IconCloudDown,
-        title: "Titulo",
-        description: "Lorem ipsum dolor sit amet.",
+        icon: IconSettingsFilled,
+        title: "Soluciones en WordPress",
+        description:
+          "Sitios autogestionables y potentes con PHP, ideales para emprendedores que buscan autonomía.",
       },
       {
         id: 5,
-        icon: IconCloudDown,
-        title: "Titulo",
-        description: "Lorem ipsum dolor sit amet.",
+        icon: IconSortAscending2Filled,
+        title: "SEO y Visibilidad",
+        description:
+          "Optimizamos tu estructura web para que tiendas y negocios tradicionales aparezcan en los primeros resultados.",
       },
       {
         id: 6,
-        icon: IconCloudDown,
-        title: "Titulo",
-        description: "Lorem ipsum dolor sit amet.",
+        icon: IconArrowAutofitUpFilled,
+        title: "Digitalización de Negocios",
+        description:
+          "Negocios	Llevamos tu negocio tradicional al mundo digital, simplificando procesos y conectando con nuevos clientes.",
       },
       {
         id: 7,
-        icon: IconCloudDown,
-        title: "Titulo",
-        description: "Lorem ipsum dolor sit amet.",
+        icon: IconDiamondFilled,
+        title: "Branding para Artesanos",
+        description:
+          "Diseñamos la identidad visual de tus productos hechos a mano para resaltar su valor y autenticidad.",
       },
       {
         id: 8,
-        icon: IconCloudDown,
-        title: "Titulo",
-        description: "Lorem ipsum dolor sit amet.",
+        icon: IconShieldCheckFilled,
+        title: "Mantenimiento Técnico",
+        description:
+          "Soporte continuo y actualizaciones constantes para que tu plataforma web esté siempre segura y operativa.",
       },
     ],
   },

@@ -1,5 +1,11 @@
 <script setup>
 import ParagraphComponents from "@/components/font/ParagraphComponents.vue";
+
+const text = {
+  title: "Visión",
+  paragraph:
+    "En MisiDev, nuestra meta principal es convertirnos en un referente de desarrollo digital en Chile, destacando por nuestra capacidad de crear soluciones tecnológicas que no solo sean funcionales, sino también sostenibles y humanas. Nuestro objetivo es acompañar a cada cliente en su proceso de transformación digital, integrando prácticas éticas y de calidad que aseguren un crecimiento a largo plazo tanto para sus negocios como para el entorno que nos rodea.",
+};
 </script>
 
 <template>
@@ -7,15 +13,11 @@ import ParagraphComponents from "@/components/font/ParagraphComponents.vue";
     <h2
       class="font-primary text-[#2E5A8F] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center"
     >
-      Titulo
+      {{ text.title }}
     </h2>
     <paragraph-components
       class="md:w-150 xl:w-170 text-center m-auto pt-3 md:pt-4 lg:pt-6"
-      >Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id quam
-      pretium, fringilla augue ut, viverra libero. Donec bibendum augue non odio
-      malesuada dignissim. Nam posuere blandit justo, ut luctus purus imperdiet
-      quis. Curabitur tristique varius orci sit amet
-      dictum.</paragraph-components
+      >{{ text.paragraph }}</paragraph-components
     >
   </div>
 </template>

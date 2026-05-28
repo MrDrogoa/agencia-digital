@@ -651,6 +651,39 @@ Se renovó el carrusel principal para mostrar contenido real por slide, con nuev
 
 7 de mayo de 2026
 
+## 🆕 Cambios Realizados Hoy (28 de mayo de 2026)
+
+### Contenido dinámico en About Us
+
+Se actualizó `TextAboutUs.vue` para que el título y el párrafo salgan desde una sola constante dinámica.
+
+#### Implementación técnica
+
+- Se creó el objeto `text` con dos claves: `title` y `paragraph`
+- Se reutilizó `TextH2Components` para renderizar el título desde `text.title`
+- Se reutilizó `ParagraphComponents` para renderizar el texto desde `text.paragraph`
+- Se mantuvo el contenido desacoplado del template para facilitar futuros cambios de contenido
+
+### Hover animado en los iconos sociales del footer
+
+Se aplicó una animación de hover a los enlaces sociales del footer usando solo Tailwind.
+
+#### Implementación técnica
+
+- Se reemplazó el hover simple por una capa de fondo con gradiente `from-[#FF6D2A] to-[#FFB446]`
+- Se usó `group` para coordinar el estado hover entre el contenedor y el icono
+- Se agregó un efecto de escala sutil para reforzar la interacción visual
+- Se configuró el icono para pasar a blanco con `group-hover:text-white`
+
+#### Archivos actualizados hoy
+
+- `src/components/main/aboutusmain/TextAboutUs.vue` (contenido dinámico para título y párrafo)
+- `src/components/Footer.vue` (hover con gradiente en los iconos sociales)
+
+## 📅 Última Actualización
+
+28 de mayo de 2026
+
 ---
 
 Desarrollado con ❤️ usando Vue 3 + Vite

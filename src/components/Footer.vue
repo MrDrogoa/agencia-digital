@@ -98,9 +98,15 @@ const currentYear = computed(() => new Date().getFullYear());
                 :aria-label="social.name"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="w-10 h-10 rounded-full bg-white text-[#1D4580] flex items-center justify-center hover:bg-gray-100 transition-colors"
+                class="group relative isolate flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-white text-[#1D4580] transition-transform duration-300 ease-[cubic-bezier(0.48,0,0.12,1)] hover:scale-105"
               >
-                <component :is="social.icon" class="w-7 h-7" />
+                <span
+                  class="absolute inset-0 translate-y-full bg-linear-to-r from-[#FF6D2A] to-[#FFB446] transition-transform duration-500 ease-[cubic-bezier(0.48,0,0.12,1)] group-hover:translate-y-0"
+                ></span>
+                <component
+                  :is="social.icon"
+                  class="relative z-10 h-7 w-7 transition-colors duration-300 group-hover:text-white"
+                />
               </a>
             </div>
           </div>

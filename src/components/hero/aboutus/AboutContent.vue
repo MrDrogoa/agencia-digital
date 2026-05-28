@@ -6,13 +6,14 @@ import ParagraphPageComponents from "@/components/font/ParagraphPageComponents.v
 <template>
   <div>
     <text-h-2-pages-components class="text-white">
-      Titulo
+      Nosotros
     </text-h-2-pages-components>
     <paragraph-page-components
-      class="text-white w-full sm:70 md:w-80 lg:w-100 xl:w-130 pt-2 sm:pt-3 md:pt-4 lg:pt-5"
+      class="text-white w-full sm:w-90 md:w-120 lg:w-140 xl:w-170 pt-2 sm:pt-3 md:pt-4 lg:pt-5"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar
-      diam neque.
+      En MisiDev fusionamos diseño estratégico y código impecable para darle
+      vida a tu proyecto. Creamos experiencias únicas que conectan con tu
+      audiencia y elevan la esencia de lo que haces.
     </paragraph-page-components>
   </div>
 </template>

@@ -8,7 +8,7 @@ import TextAboutUs from "@/components/main/aboutusmain/TextAboutUs.vue";
   <section
     class="max-w-325 mx-auto pt-8 md:pt-20 lg:pt-25 xl:pt-30 px-4 xl:px-0"
   >
-    <text-h2-components class="text-center">Titulo</text-h2-components>
+    <text-h2-components class="text-center">Valores</text-h2-components>
     <cards-about-us />
     <text-about-us />
   </section>
