@@ -680,9 +680,20 @@ Se aplicó una animación de hover a los enlaces sociales del footer usando solo
 - `src/components/main/aboutusmain/TextAboutUs.vue` (contenido dinámico para título y párrafo)
 - `src/components/Footer.vue` (hover con gradiente en los iconos sociales)
 
+## 🆕 Cambios Realizados Hoy (5 de junio de 2026)
+
+### Centrado de bloque en `CardsJobs.vue`
+
+- **Archivo modificado:** src/components/main/Jobmain/CardsJobs.vue
+- **Descripción:** Se envolvió el bloque destacado (div con fondo `#9FE7F5`) en un contenedor `flex` adicional para centrar horizontalmente el elemento con Tailwind. La estructura quedó como `div.flex.justify-center > div.bg-[#9FE7F5]...` manteniendo las clases internas existentes.
+- **Motivo:** Asegurar que la franja azul con el texto principal quede centrada en la sección "¿Cómo trabajamos en MisiDev?" en todos los breakpoints.
+- **Verificación:** Se ejecutó una comprobación rápida y no se encontraron errores de sintaxis en el componente.
+
+Hecho el 5 de junio de 2026.
+
 ## 📅 Última Actualización
 
-28 de mayo de 2026
+5 de junio de 2026
 
 ---
 
