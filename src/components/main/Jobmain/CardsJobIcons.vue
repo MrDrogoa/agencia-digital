@@ -9,23 +9,23 @@ const cards = ref([
   {
     id: 1,
     icon: "", // Aquí pondrás la ruta de tu icono
-    title: "Titulo",
+    title: "Mi web es lenta y no vende",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis lorem non felis dignissim vestibulum at et lorem.",
+      "Optimizamos la carga y la estructura UX para convertir visitas en clientes reales.",
   },
   {
     id: 2,
     icon: "", // Aquí pondrás la ruta de tu icono
-    title: "Titulo",
+    title: "No sé cómo empezar mi tienda",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis lorem non felis dignissim vestibulum at et lorem.",
+      "Te guiamos desde el diseño en Figma hasta la configuración técnica y de pagos.",
   },
   {
     id: 3,
     icon: "", // Aquí pondrás la ruta de tu icono
-    title: "Titulo",
+    title: "Necesito modernizar mi marca",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis lorem non felis dignissim vestibulum at et lorem.",
+      "Refrescamos tu imagen visual para que conecte con tu audiencia actual y destaque.",
   },
 ]);
 </script>
@@ -49,7 +49,7 @@ const cards = ref([
         <div class="py-6 lg:py-8 px-8 flex flex-col grow mt-4 lg:mt-5">
           <!-- Título -->
           <h3
-            class="text-[#2E5A8F] text-2xl md:text-3xl lg:text-4xl font-bold mb-5 md:mb-6 lg:mb-7 font-primary"
+            class="text-[#2E5A8F] text-xl md:text-2xl lg:text-3xl font-bold mb-5 md:mb-6 lg:mb-7 font-primary"
           >
             {{ card.title }}
           </h3>
