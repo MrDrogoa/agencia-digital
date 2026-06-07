@@ -1,28 +1,28 @@
 <script setup>
 import { ref } from "vue";
-import Card1 from "@/assets/card/card-1.webp";
-import Card2 from "@/assets/card/card-2.webp";
-import Card3 from "@/assets/card/card-3.webp";
+import img1 from "@/assets/card/cardworks/user1.svg";
+import img2 from "@/assets/card/cardworks/user2.svg";
+import img3 from "@/assets/card/cardworks/user3.svg";
 import { IconArrowNarrowRightDashed } from "@tabler/icons-vue";
 
 const cards = ref([
   {
     id: 1,
-    icon: "", // Aquí pondrás la ruta de tu icono
+    icon: img1,
     title: "Mi web es lenta y no vende",
     description:
       "Optimizamos la carga y la estructura UX para convertir visitas en clientes reales.",
   },
   {
     id: 2,
-    icon: "", // Aquí pondrás la ruta de tu icono
+    icon: img2,
     title: "No sé cómo empezar mi tienda",
     description:
       "Te guiamos desde el diseño en Figma hasta la configuración técnica y de pagos.",
   },
   {
     id: 3,
-    icon: "", // Aquí pondrás la ruta de tu icono
+    icon: img3,
     title: "Necesito modernizar mi marca",
     description:
       "Refrescamos tu imagen visual para que conecte con tu audiencia actual y destaque.",
@@ -41,9 +41,9 @@ const cards = ref([
         <!-- Icono -->
 
         <div
-          class="w-16 h-16 bg-[#2E5A8F] rounded-full flex items-center justify-center absolute -top-10 left-8 shadow-lg"
+          class="w-16 h-16 rounded-full flex items-center justify-center absolute -top-10 left-8 shadow-xl"
         >
-          <span class="text-white text-sm">icon</span>
+          <img :src="card.icon" alt="Icono" />
         </div>
         <!-- Contenido de la tarjeta -->
         <div class="py-6 lg:py-8 px-8 flex flex-col grow mt-4 lg:mt-5">

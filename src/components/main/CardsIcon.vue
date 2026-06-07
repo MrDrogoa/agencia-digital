@@ -96,7 +96,7 @@ const props = defineProps({
           <div class="mb-4">
             <component
               :is="card.icon"
-              class="w-16 h-16 text-[#2E5A8F]"
+              class="w-16 h-16 text-[#FF6D2A]"
               stroke-width="1.5"
             />
           </div>
