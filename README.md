@@ -715,9 +715,38 @@ Se actualizaron varias piezas de la sección Works para mejorar la presentación
 - `src/assets/card/cardworks/user2.svg` (nuevo recurso visual)
 - `src/assets/card/cardworks/user3.svg` (nuevo recurso visual)
 
+## 🆕 Cambios Realizados Hoy (15 de junio de 2026)
+
+### Tarjetas de Works con altura uniforme
+
+Se ajustó la sección de tarjetas de Works para que todas las cards mantengan la misma altura visual, sin importar la cantidad de texto que contengan.
+
+#### Implementación técnica
+
+- En `CardsJobContent.vue` se reforzó el contenedor principal con `items-stretch` para que cada tarjeta se estire dentro de su fila
+- Se convirtió cada `article` en un contenedor flex para que el bloque interno ocupe toda la altura disponible
+- Se aplicó `flex h-full flex-col` al card principal para mantener la estructura vertical consistente
+- Se hizo que el bloque de contenido use `flex-1` para empujar el botón hacia abajo de forma uniforme
+- Se ajustó el wrapper del ícono con `relative` para conservar su posición dentro del flujo flexible
+- Se mantuvo el layout responsive con Flex y Tailwind, conservando 2 columnas en desktop como base visual
+
+### Actualización de contenido del bloque secundario
+
+Se actualizó el encabezado de la sección de apoyo en Works para alinearlo con el contenido real del proyecto.
+
+#### Implementación técnica
+
+- En `CardsJobDoble.vue` se reemplazó el texto temporal por el título `Trabajemos Juntos`
+- Se mantuvo la composición existente de título + cards sin modificar la estructura del bloque
+
+#### Archivos actualizados hoy
+
+- `src/components/main/Jobmain/CardsJobContent.vue` (igualación de alturas y alineación del botón)
+- `src/components/main/Jobmain/CardsJobDoble.vue` (actualización del título de la sección)
+
 ## 📅 Última Actualización
 
-7 de junio de 2026
+15 de junio de 2026
 
 ---
 
