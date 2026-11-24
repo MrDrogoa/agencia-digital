@@ -1,0 +1,10 @@
+# Robots.txt para MisiDev Agencia Digital (https://misidev.com)
+User-agent: *
+Allow: /
+
+# Rutas privadas de administración y backend que NO deben ser indexadas por rastreadores
+Disallow: /admin
+Disallow: /api/
+
+# Mapa del sitio oficial para motores de búsqueda (Google, Bing, etc.)
+Sitemap: https://misidev.com/sitemap.xml

@@ -5,7 +5,7 @@
   height: 120px;
   width: 100%;
   padding-top: 40px;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-secondary);
   justify-content: center;
 }
 

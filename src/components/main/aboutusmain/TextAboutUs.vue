@@ -1,23 +1,33 @@
 <script setup>
 import ParagraphComponents from "@/components/font/ParagraphComponents.vue";
-
+import ButtonAllComponents from "@/components/buttons/ButtonAllComponents.vue";
+import TextH2PagesComponents from "@/components/font/TextH2PagesComponents.vue";
 const text = {
-  title: "Visión",
+  title: "Nuestra Visión",
   paragraph:
-    "En MisiDev, nuestra meta principal es convertirnos en un referente de desarrollo digital en Chile, destacando por nuestra capacidad de crear soluciones tecnológicas que no solo sean funcionales, sino también sostenibles y humanas. Nuestro objetivo es acompañar a cada cliente en su proceso de transformación digital, integrando prácticas éticas y de calidad que aseguren un crecimiento a largo plazo tanto para sus negocios como para el entorno que nos rodea.",
+    "En MisiDev, nuestra meta es convertirnos en un referente de desarrollo web y diseño estratégico en Chile y Latinoamérica. Ayudamos a negocios emergentes y marcas consolidadas a proyectar excelencia con sitios web rápidos, seguros y pensados para convertir. Creemos en el trabajo cercano, la transparencia en los plazos y la calidad en cada detalle.",
+};
+
+const openBooking = () => {
+  window.open("/booking", "_blank");
 };
 </script>
 
 <template>
   <div class="pt-8 md:pt-20 lg:pt-25 xl:pt-30">
-    <h2
-      class="font-primary text-[#2E5A8F] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center"
-    >
+    <text-h2-pages-components class="text-[#2E5A8F] text-center">
       {{ text.title }}
-    </h2>
+    </text-h2-pages-components>
     <paragraph-components
       class="md:w-150 xl:w-170 text-center m-auto pt-3 md:pt-4 lg:pt-6"
-      >{{ text.paragraph }}</paragraph-components
     >
+      {{ text.paragraph }}
+    </paragraph-components>
+
+    <div class="flex justify-center">
+      <button-all-components @click="openBooking">
+        Agendar una Cita
+      </button-all-components>
+    </div>
   </div>
 </template>

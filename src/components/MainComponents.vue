@@ -4,6 +4,7 @@ import AccountComponents from "@/components/main/AccountComponents.vue";
 import CardsComponents from "@/components/CardsComponents.vue";
 import AssociatesCompontens from "@/components/AssociatesCompontens.vue";
 import CarruselComponents from "@/components/CarruselComponents.vue";
+import QuoteBanner from "@/components/calculator/QuoteBanner.vue";
 import DescriptionComponents from "@/components/DescriptionComponents.vue";
 import CardsIconComponents from "@/components/CardsIconComponents.vue";
 </script>
@@ -15,6 +16,7 @@ import CardsIconComponents from "@/components/CardsIconComponents.vue";
     <cards-components />
     <associates-compontens />
     <carrusel-components />
+    <quote-banner />
     <description-components />
     <cards-icon-components />
   </section>

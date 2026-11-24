@@ -80,7 +80,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section ref="sectionRef" class="pt-6 sm:pt-10 md:pt-12 lg:pt-14 xl:pt-16">
+  <section ref="sectionRef" class="pt-6 sm:pt-10 md:pt-12 lg:pt-14 xl:pt-16" data-aos="fade-up" data-aos-duration="750">
     <!-- Mobile & Tablet: 2 columnas -->
     <article class="grid grid-cols-2 gap-4 md:gap-6 lg:hidden px-4">
       <template v-for="(stat, index) in stats" :key="index">

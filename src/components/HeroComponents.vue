@@ -9,13 +9,13 @@ import VectorComponents from "@/components/VectorComponents.vue";
     <article
       class="flex flex-col-reverse lg:flex-row items-center lg:justify-between gap-10 lg:gap-0"
     >
-      <div class="lg:w-1/2">
+      <div class="lg:w-1/2" data-aos="fade-right" data-aos-duration="900">
         <hero-content />
       </div>
-      <div class="lg:w-1/2 flex justify-center">
+      <div class="lg:w-1/2 flex justify-center animate-float" data-aos="fade-left" data-aos-duration="1000">
         <hero-img />
       </div>
-      <vector-components class="hidden md:block" />
+      <vector-components class="hidden md:block animate-float-delayed" />
     </article>
   </section>
 </template>

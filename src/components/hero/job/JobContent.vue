@@ -2,10 +2,15 @@
 import TextH2PagesComponents from "@/components/font/TextH2PagesComponents.vue";
 import ParagraphPageComponents from "@/components/font/ParagraphPageComponents.vue";
 import ButtonAllComponents from "@/components/buttons/ButtonAllComponents.vue";
+
 const text = {
-  title: "Trabajos",
+  title: "Trabajos y Proyectos",
   paragraph:
-    "Transformamos ideas en soluciones digitales de alto impacto. Explora nuestra selección de proyectos, donde combinamos diseño estratégico, desarrollo web a medida y una clara orientación a resultados para potenciar el crecimiento de nuestros clientes.",
+    "Transformamos ideas en soluciones digitales de alto impacto. Explora nuestra selección de proyectos, donde combinamos diseño estratégico, desarrollo web a medida y una clara orientación a resultados comerciales para potenciar el crecimiento de nuestros clientes.",
+};
+
+const openBooking = () => {
+  window.open("/booking", "_blank");
 };
 </script>
 
@@ -20,7 +25,9 @@ const text = {
         <text-h-2-pages-components class="text-white">
           {{ text.title }}
         </text-h-2-pages-components>
-        <button-all-components>Ver Detalles</button-all-components>
+        <button-all-components class="cursor-pointer" @click="openBooking">
+          Agendar Reunión de Proyecto
+        </button-all-components>
       </div>
 
       <div class="sm:w-2/3 md:w-[70%] lg:w-[40%] sm:flex-1">

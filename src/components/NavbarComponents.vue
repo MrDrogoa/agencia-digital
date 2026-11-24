@@ -10,7 +10,7 @@ const route = useRoute();
 
 // Detectar si estamos en Home o en otra vista
 const navbarVariant = computed(() => {
-  return route.path === "/" ? "home" : "secondary";
+  return route.name === "Home" ? "home" : "secondary";
 });
 </script>
 

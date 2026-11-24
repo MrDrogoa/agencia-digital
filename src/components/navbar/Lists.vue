@@ -21,7 +21,9 @@ const menuList = [
   { name: "Inicio", path: "/" },
   { name: "Nosotros", path: "/aboutus" },
   { name: "Trabajos", path: "/works" },
-  { name: "Exitos", path: "/success" },
+  { name: "Éxitos", path: "/success" },
+  { name: "Cotizador", path: "/cotizador" },
+  { name: "Cita", path: "/booking" },
 ];
 
 // Clases dinámicas según variant
@@ -38,7 +40,7 @@ const hoverClasses = computed(() => {
 
 <template>
   <section>
-    <ul class="md:flex font-primary md:gap-2 lg:gap-5 hidden">
+    <ul class="md:flex font-primary md:gap-2 lg:gap-3 xl:gap-4 hidden">
       <li
         v-for="item in menuList"
         :key="item.name"
@@ -50,7 +52,7 @@ const hoverClasses = computed(() => {
         <router-link
           :to="item.path"
           :class="[
-            'relative inline-block py-3 px-5 rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg',
+            'relative inline-block py-2.5 md:px-3 lg:px-4 xl:px-5 rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg whitespace-nowrap',
             hoverClasses,
           ]"
         >
@@ -60,7 +62,7 @@ const hoverClasses = computed(() => {
     </ul>
 
     <!-- Ícono de menú hamburguesa para pantallas pequeñas -->
-    <div class="block md:hidden">
+    <div class="block md:hidden text-[#1D4580]">
       <IconMenu4
         v-if="!menuOpen"
         class="text-2xl cursor-pointer"
@@ -87,11 +89,13 @@ const hoverClasses = computed(() => {
           :key="item.name"
           class="text-sm sm:text-base font-semibold text-white"
         >
-          <router-link :to="item.path">{{ item.name }}</router-link>
+          <router-link :to="item.path" @click="menuOpen = false">{{
+            item.name
+          }}</router-link>
         </li>
         <!-- Botón de contacto en menú móvil -->
         <div class="flex gap-2">
-          <router-link to="/contact">
+          <router-link to="/contact" @click="menuOpen = false">
             <button-contact-components class="text-white"
               >Contacto</button-contact-components
             >

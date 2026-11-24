@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import { useRouter } from "vue-router";
 import VectorCarrusel from "@/assets/carrusel/VectorCarrusel.svg";
 import software from "@/assets/carrusel/software.webp";
 import business from "@/assets/carrusel/business.webp";
@@ -10,6 +11,8 @@ import {
   IconArrowBigLeftFilled,
 } from "@tabler/icons-vue";
 
+const router = useRouter();
+
 // Array de slides del carrusel
 const slides = ref([
   {
@@ -18,7 +21,8 @@ const slides = ref([
     title: "Te guiamos en el camino de la innovación",
     description:
       "Transformamos líneas de código en soluciones estratégicas. Nuestro enfoque combina robustez técnica con un diseño centrado en el usuario para impulsar la competitividad de tu negocio.",
-    link: "/servicios/desarrollo-software",
+    link: "/works",
+    buttonText: "Ver Nuestros Trabajos",
   },
   {
     id: 2,
@@ -26,7 +30,8 @@ const slides = ref([
     title: "Diseño que impacta, Estrategia que convierte",
     description:
       "No solo creamos flyers; diseñamos identidades visuales que cuentan historias. Potenciamos tu presencia online con estética estratégica para destacar desde el primer clic.",
-    link: "/servicios/diseño",
+    link: "/works",
+    buttonText: "Explorar Portafolio",
   },
   {
     id: 3,
@@ -34,14 +39,22 @@ const slides = ref([
     title: "Garantizamos el éxito de tu visión digital",
     description:
       "Trabajar con nosotros es iniciar una alianza de crecimiento. Nos comprometemos con la accesibilidad, la transparencia y resultados tangibles que construyen confianza a largo plazo.",
-
-    link: "/servicios/marketing-digital",
+    link: "/booking",
+    buttonText: "Agendar Asesoría Gratuita",
   },
 ]);
 
 // Estado del carrusel
 const currentIndex = ref(0);
 let autoPlayInterval = null;
+
+const handleAction = (slide) => {
+  if (slide.link === "/booking") {
+    window.open("/booking", "_blank");
+  } else {
+    router.push(slide.link);
+  }
+};
 
 // Función para ir al siguiente slide
 const nextSlide = () => {
@@ -88,20 +101,20 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section class="relative w-full max-w-7xl mx-auto">
+  <section class="relative w-full max-w-7xl mx-auto" data-aos="zoom-in" data-aos-duration="850">
     <!-- Contenedor del carrusel con fondo (solo visible en lg+) -->
-    <div class="relative rounded-2xl">
+    <div class="relative rounded-2xl lg:overflow-hidden lg:bg-linear-to-r lg:from-[#61BDBC] lg:via-[#468DA4] lg:to-[#1D4580] lg:shadow-xl">
       <!-- Vector de fondo (solo visible en lg+) -->
-      <div class="hidden lg:block absolute inset-0 -z-10 rounded-2xl">
+      <div class="hidden lg:block absolute inset-0 pointer-events-none opacity-90">
         <img
           :src="VectorCarrusel"
           alt="Vector Carrusel"
-          class="w-full h-full"
+          class="w-full h-full object-cover"
         />
       </div>
 
       <!-- Slides del carrusel -->
-      <div class="relative lg:px-8 py-8 lg:py-12">
+      <div class="relative z-10 lg:px-10 py-8 lg:py-10">
         <div class="relative inset-0 lg:min-h-100 lg:flex lg:items-center">
           <!-- Cada slide -->
           <transition name="fade" mode="out-in">
@@ -114,7 +127,7 @@ onUnmounted(() => {
                 <img
                   :src="slides[currentIndex].image"
                   :alt="slides[currentIndex].title"
-                  class="w-full md:w-100 lg:w-130 m-auto object-cover rounded-2xl shadow-xl"
+                  class="w-full max-w-lg h-64 sm:h-72 lg:h-80 mx-auto object-cover rounded-2xl shadow-xl"
                 />
               </div>
 
@@ -123,10 +136,10 @@ onUnmounted(() => {
                 class="w-full lg:w-1/2 text-center lg:text-left px-4 lg:px-0"
               >
                 <button-all-components
-                  :link="slides[currentIndex].link"
-                  class="mb-2 md:mb-4"
+                  @click="handleAction(slides[currentIndex])"
+                  class="mb-2 md:mb-4 cursor-pointer"
                 >
-                  Get Started
+                  {{ slides[currentIndex].buttonText || "Get Started" }}
                 </button-all-components>
                 <h2
                   class="text-3xl lg:text-4xl font-bold text-[#2E5A8F] lg:text-white mb-4 lg:mb-6"
@@ -145,7 +158,7 @@ onUnmounted(() => {
       </div>
     </div>
     <!-- Indicadores (dots) -->
-    <div class="flex gap-2 justify-center">
+    <div class="flex gap-2 justify-center mt-6">
       <button
         v-for="(slide, index) in slides"
         :key="slide.id"
@@ -165,19 +178,19 @@ onUnmounted(() => {
       <!-- Botón anterior -->
       <button
         @click="prevSlide"
-        class="w-12 h-12 rounded-full bg-[#9FE7F5] cursor-pointer lg:hover:bg-[#2E5A8F] flex items-center justify-center transition-colors"
+        class="group w-12 h-12 rounded-full bg-[#9FE7F5] cursor-pointer lg:hover:bg-[#2E5A8F] flex items-center justify-center transition-colors"
         aria-label="Slide anterior"
       >
-        <icon-arrow-big-left-filled class="w-6 h-6 text-white" />
+        <icon-arrow-big-left-filled class="w-6 h-6 text-[#063F5C] lg:group-hover:text-white transition-colors" />
       </button>
 
       <!-- Botón siguiente -->
       <button
         @click="nextSlide"
-        class="w-12 h-12 rounded-full bg-[#9FE7F5] cursor-pointer lg:hover:bg-[#2E5A8F] flex items-center justify-center transition-colors"
+        class="group w-12 h-12 rounded-full bg-[#9FE7F5] cursor-pointer lg:hover:bg-[#2E5A8F] flex items-center justify-center transition-colors"
         aria-label="Siguiente slide"
       >
-        <icon-arrow-big-right-filled class="w-7 h-7 text-white" />
+        <icon-arrow-big-right-filled class="w-7 h-7 text-[#063F5C] lg:group-hover:text-white transition-colors" />
       </button>
     </div>
   </section>

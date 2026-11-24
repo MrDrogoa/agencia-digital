@@ -8,21 +8,23 @@ import Sodimac from "@/assets/associates/sodimac.png";
 
 <template>
   <section
-    class="flex flex-col sm:flex-row justify-center gap-5 md:gap-15 lg:gap-20 xl:gap-30 items-center flex-wrap w-full"
+    class="flex flex-col sm:flex-row justify-center gap-5 md:gap-15 lg:gap-20 xl:gap-30 items-center flex-wrap w-full py-6 opacity-85 hover:opacity-100 transition-opacity"
+    data-aos="fade-up"
+    data-aos-duration="800"
   >
-    <div class="w-">
+    <div class="grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
       <img :src="Copec" alt="Copec logo" />
     </div>
-    <div>
+    <div class="grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
       <img :src="Mall" alt="Mall Plaza logo" />
     </div>
-    <div>
+    <div class="grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
       <img :src="Derco" alt="Derco logo" />
     </div>
-    <div>
+    <div class="grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
       <img :src="AguasAndinas" alt="Aguas Andinas logo" />
     </div>
-    <div>
+    <div class="grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
       <img :src="Sodimac" alt="Sodimac logo" />
     </div>
   </section>

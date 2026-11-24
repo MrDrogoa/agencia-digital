@@ -1,5 +1,5 @@
 <script setup>
-import AboutHero from "@/assets/aboutus.webp";
+import AboutHero from "@/assets/AboutUs.webp";
 </script>
 
 <template>

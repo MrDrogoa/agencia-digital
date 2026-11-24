@@ -1,15 +1,17 @@
 <script setup>
-import { reactive } from "vue";
-import TextH2PagesComponents from "@/components/font/TextH2PagesComponents.vue";
+import { ref, reactive } from "vue";
 import ButtonAllComponents from "@/components/buttons/ButtonAllComponents.vue";
+import { IconCheck, IconBrandWhatsapp } from "@tabler/icons-vue";
 
 const whatsappNumber = "56962857073";
+const isSent = ref(false);
 
 const form = reactive({
   name: "",
   lastName: "",
   email: "",
   message: "",
+  website_url: "", // Campo Honeypot anti-bots
 });
 
 const errors = reactive({
@@ -58,6 +60,11 @@ const validateForm = () => {
 };
 
 const handleSubmit = () => {
+  // Bloqueo silencioso si un bot rellenó el campo Honeypot oculto
+  if (form.website_url && form.website_url.trim() !== "") {
+    return;
+  }
+
   if (!validateForm()) return;
 
   const message = [
@@ -74,10 +81,12 @@ const handleSubmit = () => {
     "noopener,noreferrer",
   );
 
+  isSent.value = true;
   form.name = "";
   form.lastName = "";
   form.email = "";
   form.message = "";
+  form.website_url = "";
   clearErrors();
 };
 </script>
@@ -86,10 +95,45 @@ const handleSubmit = () => {
   <div
     class="w-full rounded-[28px] bg-[#1D4580] p-6 text-white shadow-2xl md:p-10"
   >
+    <div
+      v-if="isSent"
+      class="mb-6 p-4 rounded-2xl bg-emerald-500/20 border border-emerald-400 text-emerald-100 flex items-center gap-3 animate-in fade-in"
+    >
+      <div class="p-1 rounded-full bg-emerald-500 text-white shrink-0">
+        <IconCheck class="w-5 h-5" />
+      </div>
+      <div class="text-xs sm:text-sm text-left">
+        <p class="font-bold text-white">
+          ¡Listo! Te redirigimos a WhatsApp con tu mensaje preparado.
+        </p>
+        <p class="text-emerald-200">
+          Te responderemos a la brevedad para coordinar tu proyecto.
+        </p>
+      </div>
+    </div>
+
     <form class="flex flex-col gap-5" @submit.prevent="handleSubmit">
-      <text-h-2-pages-components class="text-center md:text-left">
-        Titulo
-      </text-h-2-pages-components>
+      <!-- Campo Honeypot Anti-Bots (invisible para humanos) -->
+      <div
+        class="absolute -left-[9999px] opacity-0 pointer-events-none h-0 w-0 overflow-hidden"
+        aria-hidden="true"
+      >
+        <label for="contact_website_url">Sitio Web (No completar)</label>
+        <input
+          id="contact_website_url"
+          v-model="form.website_url"
+          type="text"
+          name="website_url"
+          tabindex="-1"
+          autocomplete="off"
+        />
+      </div>
+
+      <h2
+        class="text-center md:text-left font-primary text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 md:mb-4"
+      >
+        Escríbenos
+      </h2>
 
       <div class="flex flex-col gap-5">
         <div class="flex flex-col gap-5 md:flex-row">
@@ -103,6 +147,7 @@ const handleSubmit = () => {
               id="name"
               v-model="form.name"
               type="text"
+              maxlength="60"
               autocomplete="given-name"
               class="w-full rounded-2xl border border-white/10 bg-white px-4 py-3 text-slate-800 outline-none transition focus:border-[#61BDBC] focus:ring-2 focus:ring-[#61BDBC]/40"
             />
@@ -121,6 +166,7 @@ const handleSubmit = () => {
               id="lastName"
               v-model="form.lastName"
               type="text"
+              maxlength="60"
               autocomplete="family-name"
               class="w-full rounded-2xl border border-white/10 bg-white px-4 py-3 text-slate-800 outline-none transition focus:border-[#61BDBC] focus:ring-2 focus:ring-[#61BDBC]/40"
             />
@@ -143,6 +189,7 @@ const handleSubmit = () => {
             id="email"
             v-model="form.email"
             type="email"
+            maxlength="120"
             autocomplete="email"
             class="w-full rounded-2xl border border-white/10 bg-white px-4 py-3 text-slate-800 outline-none transition focus:border-[#61BDBC] focus:ring-2 focus:ring-[#61BDBC]/40"
           />
@@ -164,6 +211,7 @@ const handleSubmit = () => {
             id="message"
             v-model="form.message"
             rows="6"
+            maxlength="600"
             class="w-full resize-none rounded-2xl border border-white/10 bg-white px-4 py-3 text-slate-800 outline-none transition focus:border-[#61BDBC] focus:ring-2 focus:ring-[#61BDBC]/40"
           ></textarea>
           <p

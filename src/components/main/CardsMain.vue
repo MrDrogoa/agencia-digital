@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 import Card1 from "@/assets/card/card-1.webp";
 import Card2 from "@/assets/card/card-2.webp";
 import Card3 from "@/assets/card/card-3.webp";
@@ -8,7 +9,14 @@ import {
   IconUsersGroup,
   IconSourceCode,
   IconAutomaticGearboxFilled,
+  IconCalendarPlus,
 } from "@tabler/icons-vue";
+
+const router = useRouter();
+
+const openBooking = () => {
+  window.open("/booking", "_blank");
+};
 
 const cards = ref([
   {
@@ -18,7 +26,7 @@ const cards = ref([
     title: "Trabajo en Equipo",
     description:
       "Creemos que las mejores soluciones nacen de la inteligencia colectiva. Nos integramos en flujos de trabajo dinámicos, aportando una comunicación fluida y una coordinación técnica que garantiza la coherencia en cada etapa del proyecto.",
-    linkText: "Ver más",
+    linkText: "Ver Portafolio",
   },
   {
     id: 2,
@@ -27,7 +35,7 @@ const cards = ref([
     title: "Desarrollo Web",
     description:
       "Construimos experiencias digitales escalables y de alto rendimiento. Nos especializamos en el uso de tecnologías modernas para entregar interfaces fluidas, asegurando que cada línea de código contribuya a una navegación intuitiva y optimizada para cualquier dispositivo.",
-    linkText: "Ver más",
+    linkText: "Ver Portafolio",
   },
   {
     id: 3,
@@ -36,7 +44,7 @@ const cards = ref([
     title: "Optimización Inteligente",
     description:
       "Implementamos herramientas de Inteligencia Artificial para optimizar procesos complejos y elevar la eficiencia operativa. Nos enfocamos en diseñar sistemas inteligentes y flujos automatizados que permitan a nuestros clientes escalar mediante el uso de tecnología de última generación.",
-    linkText: "Ver más",
+    linkText: "Ver Portafolio",
   },
 ]);
 </script>
@@ -47,6 +55,8 @@ const cards = ref([
       <div
         v-for="card in cards"
         :key="card.id"
+        data-aos="fade-up"
+        :data-aos-delay="card.id * 150"
         class="group relative flex flex-col bg-white rounded-4xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] md:max-w-2xl lg:max-w-6xl mx-auto"
       >
         <!-- Imagen superior -->
@@ -80,17 +90,25 @@ const cards = ref([
             {{ card.description }}
           </p>
 
-          <!-- Enlace -->
-          <div class="mb-5 md:mb-6 lg:mb-7">
-            <a
-              href="#"
-              class="inline-flex items-center text-xs sm:text-sm lg:text-base gap-2 text-[#2E5A8F] group-hover:text-[#FF762E] font-medium transition-colors duration-300 font-secondary"
+          <!-- Acciones interactivas -->
+          <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+            <router-link
+              to="/works"
+              class="inline-flex items-center text-xs sm:text-sm font-bold gap-1.5 text-[#2E5A8F] hover:text-[#FF762E] transition-colors font-secondary"
             >
-              {{ card.linkText }}
+              <span>{{ card.linkText }}</span>
               <IconArrowNarrowRightDashed
-                class="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 transition-transform duration-300 group-hover:translate-x-1"
+                class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
               />
-            </a>
+            </router-link>
+
+            <button
+              @click.stop="openBooking"
+              class="text-xs font-bold text-[#FF6D2A] hover:text-[#FFB446] transition-colors cursor-pointer flex items-center gap-1"
+            >
+              <IconCalendarPlus class="w-3.5 h-3.5" />
+              <span>Agendar</span>
+            </button>
           </div>
         </div>
 

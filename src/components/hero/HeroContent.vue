@@ -2,11 +2,29 @@
 import ButtonSingleComponents from "@/components/buttons/ButtonSingleComponents.vue";
 import ParagraphComponents from "@/components/font/ParagraphComponents.vue";
 import ButtonAllComponents from "@/components/buttons/ButtonAllComponents.vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const openBooking = () => {
+  window.open("/booking", "_blank");
+};
+
+const scrollToDetails = () => {
+  const section = document.getElementById("services-section") || document.querySelector("main");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  } else {
+    router.push("/aboutus");
+  }
+};
 </script>
 
 <template>
   <div class="text-center lg:text-start">
-    <button-single-components>Get Started</button-single-components>
+    <button-single-components @click="openBooking" class="cursor-pointer">
+      Agendar Cita
+    </button-single-components>
     <h1
       class="font-primary text-[#2E5A8F] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold pt-3 md:pt-4 lg:pt-6"
     >
@@ -18,10 +36,12 @@ import ButtonAllComponents from "@/components/buttons/ButtonAllComponents.vue";
     <paragraph-components
       class="w-auto sm:w-[80%] lg:w-full m-auto pt-3 md:pt-4 lg:pt-6"
     >
-      Convertimos tu visión en resultados digitales. Con MISIDEV obtienes sitios
-      web modernos y seguros. Acompañamos tanto a quienes inician su presencia
-      online, como a empresas que buscan optimizar y crecer.
+      Convertimos tu visión en resultados tangibles. En MisiDev diseñamos sitios web
+      estratégicos, rápidos y atractivos. Acompañamos tanto a quienes inician su presencia
+      online desde cero, como a negocios y startups que buscan optimizar sus ventas y crecer.
     </paragraph-components>
-    <button-all-components>Ver mas</button-all-components>
+    <button-all-components @click="scrollToDetails" class="cursor-pointer">
+      Conocer Más
+    </button-all-components>
   </div>
 </template>

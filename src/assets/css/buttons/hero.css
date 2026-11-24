@@ -18,7 +18,6 @@
 /* Hover effects only on lg (1024px+) and xl screens */
 @media (min-width: 1024px) {
   .btn-all:hover {
-    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.562);
     transform: scale(1.01) translateY(-4px);
     box-shadow:
       inset 0px 0px 10px rgba(100, 180, 200, 0.575),

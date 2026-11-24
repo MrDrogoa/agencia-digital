@@ -11,5 +11,3 @@ import FillLine from "@/components/main/aboutusmain/FillLine.vue";
   <fill-line />
   <about-us-components />
 </template>
-
-<
